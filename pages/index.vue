@@ -44,16 +44,25 @@ export default {
 }
 
 .intro {
-	background-color: color(Blue);
-	width: 100vw;
 	display: flex;
-	align-items: center;
 	justify-content: center;
-	&--has-results {
-	}
+	align-items: center;
+	width: 100vw;
+	background-color: color(Skyblue);
 	&__column {
-		border: 1px solid red;
+		transition: padding 0.4s;
 		padding: grid(2);
+	}
+	&--no-results {
+		.intro__column {
+			padding: grid(8 2 2 2);
+			@include max-(padding-top, 8, 320);
+		}
+	}
+	&--has-results {
+		.intro__column {
+			padding: grid(3 2 2 2);
+		}
 	}
 }
 .results {

@@ -1,8 +1,13 @@
 <template>
-	<div class="pagination">
+	<div v-if="totalResults > perPage" class="pagination">
 		<ul class="pagination__list">
-			<li v-for="i in 20" :key="i" class="pagination__item">
-				<button class="pagination__button">
+			<li
+				v-for="i in totalPages"
+				:key="i"
+				class="pagination__item"
+				:class="[currentPage === i ? 'pagination__item--active' : '']"
+			>
+				<button class="pagination__button" @click="setCurrent(i)">
 					{{ i }}
 				</button>
 			</li>
@@ -11,28 +16,58 @@
 </template>
 
 <script>
-export default {};
+export default {
+	computed: {
+		totalResults() {
+			return this.$store.state.search.results.items.length;
+		},
+		totalPages() {
+			return this.$store.state.pagination.pages;
+		},
+		perPage() {
+			return this.$store.state.pagination.perpage;
+		},
+		currentPage() {
+			return this.$store.state.pagination.current;
+		}
+	},
+	methods: {
+		setCurrent(page) {
+			this.$store.dispatch('pagination/setCurrent', page);
+		}
+	}
+};
 </script>
 
 <style lang="scss">
+@import '~tools';
 .pagination {
 	&__list {
+		padding: 0 1rem;
 	}
 	&__item {
 		& + & {
 			margin-left: 0.5rem;
 		}
+		&--active button {
+			background-color: color(Dark);
+			color: color(White);
+		}
 	}
 	&__button {
-		border: 1px solid color(Black, 0.1);
+		min-width: 2rem;
 		box-shadow: none;
-		background-color: white;
+		border: none;
 
 		border-radius: 0px;
+		background-color: white;
 		line-height: 2rem;
-		min-width: 2rem;
-		padding: 0 0.25rem;
 		text-align: center;
+		padding: 0 0.25rem;
+		&:focus {
+			outline: none;
+			box-shadow: 0 0 0.25rem 0 color(Skyblue);
+		}
 	}
 }
 </style>

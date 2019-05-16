@@ -1,7 +1,7 @@
 <template>
 	<footer id="footer" class="footer">
 		<h5 class="sub">
-			the end..
+			Thanks for searching :)
 		</h5>
 	</footer>
 </template>
@@ -17,5 +17,8 @@ export default {};
 .footer {
 	padding: grid(1);
 	text-align: center;
+	h5 {
+		opacity: 0.1;
+	}
 }
 </style>

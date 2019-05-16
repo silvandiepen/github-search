@@ -25,14 +25,14 @@ export default {
 	left: 0;
 
 	width: 100%;
-	text-align: left;
 	background-color: color(Dark);
+	text-align: left;
 	padding: 1rem;
 	h3 {
-		font-size: 20px;
 		color: white;
-		font-weight: normal;
 		color: color(White, 0.5);
+		font-weight: normal;
+		font-size: 20px;
 		strong {
 			color: color(White);
 		}
