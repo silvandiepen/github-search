@@ -41,15 +41,15 @@ export const actions = {
 			commit('resetState');
 		} else {
 			const results = await this.$axios.$get(`/search/users?q=${state.searchterm}`).then((response) => {
-				console.log(response);
-				response.items.forEach((user) => {
-					const starred = this.$axios.$get(
-						`/search/users/${
-							user.login
-						}/starred?client_id=cc0298bd4b92638986c6&client_secret=5b9d616561205d2152d61f1197cda1ebb6125510`
-					);
-					user.starred = starred;
-				});
+				// Work in progress get details.
+				// response.items.forEach((user) => {
+				// 	const starred = this.$axios.$get(
+				// 		`/search/users/${
+				// 			user.login
+				// 		}/starred?client_id=cc0298bd4b92638986c6&client_secret=5b9d616561205d2152d61f1197cda1ebb6125510`
+				// 	);
+				// 	user.starred = starred;
+				// });
 				return response;
 			});
 			commit('setResults', results);

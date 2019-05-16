@@ -11,7 +11,6 @@ export default {};
 <style lang="scss">
 @import '~tools';
 
-// Footer styles
 .footer {
 	padding: grid(1);
 	text-align: center;

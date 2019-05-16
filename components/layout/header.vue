@@ -1,7 +1,6 @@
 <template>
 	<header id="header" class="header">
-		<h3 class="sub"><strong>GitHub</strong><span>Search</span>
-</h3>
+		<h3 class="sub"><strong>GitHub</strong><span>Search</span></h3>
 	</header>
 </template>
 
@@ -20,7 +19,6 @@ export default {
 @import '~tools';
 
 .header {
-	// Header styles
 	position: fixed;
 	top: 0;
 	left: 0;
