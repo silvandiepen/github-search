@@ -67,7 +67,7 @@ export default {
 	},
 	methods: {
 		goToItem(item) {
-			console.log('hoi', item);
+			window.location = item.html_url;
 		}
 	}
 };
@@ -104,6 +104,7 @@ export default {
 	&__bar {
 		display: flex;
 		padding: 2rem 0;
+		justify-content: space-between;
 	}
 	&__info {
 		display: flex;

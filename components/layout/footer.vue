@@ -1,8 +1,6 @@
 <template>
 	<footer id="footer" class="footer">
-		<h5 class="sub">
-			Thanks for searching :)
-		</h5>
+		<h5 class="sub"></h5>
 	</footer>
 </template>
 

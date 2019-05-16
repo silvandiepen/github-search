@@ -49,6 +49,9 @@ export default {
 	align-items: center;
 	width: 100vw;
 	background-color: color(Skyblue);
+	background-image: url('/images/Octocat.png');
+	background-position: center center;
+	background-repeat: no-repeat;
 	&__column {
 		transition: padding 0.4s;
 		padding: grid(2);
