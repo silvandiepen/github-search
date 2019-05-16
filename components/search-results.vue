@@ -110,9 +110,9 @@ export default {
 		display: flex;
 	}
 	&__avatar {
-		border-radius: 50%;
 		width: calc(#{grid(0.75)} + 2.5rem);
 		height: calc(#{grid(0.75)} + 2.5rem);
+		border-radius: 50%;
 	}
 	&__name {
 		margin: 0;
@@ -136,9 +136,9 @@ export default {
 	&__buttons {
 		position: absolute;
 		top: 100%;
-		transform: translateY(-50%);
 		right: 1rem;
 		display: flex;
+		transform: translateY(-50%);
 	}
 	&__total {
 		line-height: 2rem;

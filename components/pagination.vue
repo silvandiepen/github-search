@@ -65,8 +65,8 @@ export default {
 		text-align: center;
 		padding: 0 0.25rem;
 		&:focus {
-			outline: none;
 			box-shadow: 0 0 0.25rem 0 color(Skyblue);
+			outline: none;
 		}
 	}
 }
