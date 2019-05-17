@@ -2,16 +2,47 @@
 	<div class="search-results">
 		<ul class="search-results__list">
 			<li v-for="(item, index) in searchResults" :key="index" class="search-results__item" @click="goToItem(item)">
-				<div class="search-results__info">
-					<img class="search-results__avatar" :src="item.avatar_url" :alt="item.login" />
-					<h4 class="search-results__name">
-						{{ item.login }}
-					</h4>
-					<div class="search-results__details"></div>
-				</div>
+				<article class="search-results__info">
+					<header class="search-results__header">
+						<img class="search-results__avatar" :src="item.avatar_url" :alt="item.login" />
+						<h4 class="search-results__name">
+							{{ item.login }}
+						</h4>
+					</header>
+					<main class="search-results__main">
+						<div class="search-results__bio">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus et sagittis neque. Ut sit amet tortor non augue
+								porta dapibus et non felis. Nunc felis dui, mollis sit amet eros eget, convallis hendrerit lacus. Integer vitae
+								purus condimentum, viverra dui sit amet, mattis urna. Nam interdum placerat lectus sed pretium.
+							</p>
+						</div>
+						<p>
+							{{ item.bio }}
+						</p>
+						<div class="search-results__details">
+							<dl>
+								<dt>Total Stars</dt>
+								<dd>88</dd>
+							</dl>
+							<dl>
+								<dt>Repositories</dt>
+								<dd>88</dd>
+							</dl>
+							<dl>
+								<dt>Location</dt>
+								<dd>Amsterdam, NL</dd>
+							</dl>
+							<dl>
+								<dt>Company</dt>
+								<dd>NameofCompany</dd>
+							</dl>
+						</div>
+					</main>
+				</article>
 				<div class="search-results__buttons">
 					<a class="button search-results__link search-results__link--repository" :href="item.html_url">
-						<span class="button__text">View User</span>
+						<span class="button__text">Go to {{ item.login }}</span>
 					</a>
 				</div>
 			</li>
@@ -106,8 +137,11 @@ export default {
 		padding: 2rem 0;
 		justify-content: space-between;
 	}
-	&__info {
+	&__header {
 		display: flex;
+	}
+	&__bio {
+		padding: 1rem 0;
 	}
 	&__avatar {
 		width: calc(#{grid(0.75)} + 2.5rem);
@@ -142,6 +176,29 @@ export default {
 	}
 	&__total {
 		line-height: 2rem;
+	}
+	&__details {
+		display: flex;
+		margin: 2rem -2rem -2rem -2rem;
+		background-color: color(BeigeLight);
+		border-top: 1px solid color(Beige);
+		justify-content: space-between;
+		dl {
+			padding: 2rem;
+			display: flex;
+			flex-direction: column;
+			dt {
+				font-weight: bold;
+				font-size: 12px;
+				text-transform: uppercase;
+				& + dd {
+					margin-top: 0.5rem;
+				}
+			}
+			dd {
+				text-align: center;
+			}
+		}
 	}
 }
 </style>

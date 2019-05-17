@@ -1,7 +1,7 @@
 <template>
 	<div class="search-bar">
 		<div class="search-bar__element">
-			<input v-model="searchTerm" placeholder="Search GitHub" @input="searchForResults" />
+			<input v-model="searchTerm" placeholder="Search for GitHub Users" @input="searchForResults" />
 			<span class="search-bar__icon"> </span>
 		</div>
 	</div>

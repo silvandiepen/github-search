@@ -1,6 +1,11 @@
 <template>
 	<header id="header" class="header">
-		<h3 class="sub"><strong>GitHub</strong><span>Search</span></h3>
+		<nuxt-link to="/">
+			<h3 class="sub">
+				<strong>GitHub</strong>
+				<span>UserSearch</span>
+			</h3>
+		</nuxt-link>
 	</header>
 </template>
 
